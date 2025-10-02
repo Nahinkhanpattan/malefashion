@@ -164,35 +164,43 @@ function ProductDetails() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
           {/* Product Images */}
           <div>
-            {/* Main Image */}
-            <div className="mb-4 overflow-hidden rounded-lg">
-              <img 
-                src={product.images[selectedImage]} 
-                alt={product.name} 
-                className="w-full h-[500px] object-cover"
-              />
-            </div>
-            
-            {/* Thumbnails */}
-            {product.images.length > 1 && (
-              <div className="grid grid-cols-4 gap-2">
-                {product.images.map((image, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setSelectedImage(index)}
-                    className={`rounded-md overflow-hidden border-2 ${
-                      selectedImage === index ? 'border-primary-500' : 'border-transparent'
-                    }`}
-                  >
+            {/** Build a robust gallery including mainImage as fallback */}
+            {(() => {
+              const galleryImages = [product.mainImage, ...(product.images || [])].filter(Boolean)
+              const currentIndex = Math.min(selectedImage, Math.max(0, galleryImages.length - 1))
+              return (
+                <>
+                  {/* Main Image */}
+                  <div className="mb-4 overflow-hidden rounded-lg">
                     <img 
-                      src={image} 
-                      alt={`${product.name} thumbnail ${index + 1}`} 
-                      className="w-full h-24 object-cover"
+                      src={galleryImages[currentIndex]} 
+                      alt={product.name} 
+                      className="w-full h-[500px] object-cover"
                     />
-                  </button>
-                ))}
-              </div>
-            )}
+                  </div>
+                  {/* Thumbnails */}
+                  {galleryImages.length > 1 && (
+                    <div className="grid grid-cols-4 gap-2">
+                      {galleryImages.map((image, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setSelectedImage(index)}
+                          className={`rounded-md overflow-hidden border-2 ${
+                            currentIndex === index ? 'border-primary-500' : 'border-transparent'
+                          }`}
+                        >
+                          <img 
+                            src={image} 
+                            alt={`${product.name} thumbnail ${index + 1}`} 
+                            className="w-full h-24 object-cover"
+                          />
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </>
+              )
+            })()}
           </div>
           
           {/* Product Info */}

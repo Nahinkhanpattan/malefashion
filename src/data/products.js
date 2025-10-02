@@ -1,3 +1,6 @@
+// Resolve images from src/assets at build time (works with Vite)
+const imageUrl = (relativePath) => new URL(`../assets/images/${relativePath}`, import.meta.url).href
+
 export const products = [
   {
     id: 'product-1',
@@ -12,7 +15,7 @@ export const products = [
     featured: true,
     colors: ['#000000', '#FFFFFF', '#6F7378'],
     sizes: ['S', 'M', 'L', 'XL'],
-    mainImage: '/assets/images/categorie1.js/1.jpg',
+    mainImage: imageUrl('category1/1.jpg'),
     images: [
       'https://images.pexels.com/photos/5384423/pexels-photo-5384423.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       'https://images.pexels.com/photos/5384422/pexels-photo-5384422.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
@@ -37,7 +40,7 @@ export const products = [
     featured: true,
     colors: ['#0F2953', '#343434'],
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    mainImage: '/assets/images/categorie1.js/2.jpg',
+    mainImage: imageUrl('category1/2.jpg'),
     images: [
       'https://images.pexels.com/photos/2866077/pexels-photo-2866077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       'https://images.pexels.com/photos/2887766/pexels-photo-2887766.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
@@ -61,7 +64,7 @@ export const products = [
     featured: false,
     colors: ['#3E372F', '#1B2731', '#EAEAEA'],
     sizes: ['30', '32', '34', '36', '38'],
-    mainImage: '/assets/images/categorie1.js/3.jpg',
+    mainImage: imageUrl('category1/3.jpg'),
     images: [
       'https://images.pexels.com/photos/3760610/pexels-photo-3760610.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       'https://images.pexels.com/photos/4210863/pexels-photo-4210863.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
@@ -85,7 +88,7 @@ export const products = [
     featured: true,
     colors: ['#FFFFFF', '#76A4CE', '#F5E8C5'],
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    mainImage: '/assets/images/categorie1.js/4.jpg',
+    mainImage: imageUrl('category1/4.jpg'),
     images: [
       'https://images.pexels.com/photos/297933/pexels-photo-297933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       'https://images.pexels.com/photos/6626903/pexels-photo-6626903.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
@@ -109,7 +112,7 @@ export const products = [
     featured: true,
     colors: ['#000000', '#5B3F36'],
     sizes: ['7', '8', '9', '10', '11', '12'],
-    mainImage: '/assets/images/categorie1.js/5.jpg',
+    mainImage: imageUrl('category1/5.jpg'),
     images: [
       'https://images.pexels.com/photos/293406/pexels-photo-293406.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       'https://images.pexels.com/photos/267242/pexels-photo-267242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
@@ -133,7 +136,7 @@ export const products = [
     featured: false,
     colors: ['#2E2E2E', '#414756'],
     sizes: ['S', 'M', 'L', 'XL'],
-    mainImage: '/assets/images/categorie1.js/6.jpg',
+    mainImage: imageUrl('category1/6.jpg'),
     images: [
       'https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       'https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
@@ -157,7 +160,7 @@ export const products = [
     featured: false,
     colors: ['#E2E8F1', '#0D253F'],
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    mainImage: '/assets/images/categorie1.js/7.jpg',
+    mainImage: imageUrl('category1/7.jpg'),
     images: [
       'https://images.pexels.com/photos/4066288/pexels-photo-4066288.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       'https://images.pexels.com/photos/6311387/pexels-photo-6311387.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
@@ -181,7 +184,7 @@ export const products = [
     featured: false,
     colors: ['#1F1F1F', '#3A3A42', '#212A37'],
     sizes: ['30', '32', '34', '36', '38', '40'],
-    mainImage: '/assets/images/categorie1.js/8.jpg',
+    mainImage: imageUrl('category1/8.jpg'),
     images: [
       'https://images.pexels.com/photos/6764037/pexels-photo-6764037.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       'https://images.pexels.com/photos/6764007/pexels-photo-6764007.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
@@ -205,7 +208,7 @@ export const products = [
     featured: false,
     colors: ['#43291F', '#0B0B0B'],
     sizes: [],
-    mainImage: '/assets/images/categorie1.js/9.jpg',
+    mainImage: imageUrl('category1/9.jpg'),
     images: [
       'https://images.pexels.com/photos/2079250/pexels-photo-20779250.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       'https://images.pexels.com/photos/4255378/pexels-photo-42575378.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
@@ -229,7 +232,7 @@ export const products = [
     featured: false,
     colors: ['#9B9B9B', '#C4A13B'],
     sizes: [],
-    mainImage: '/assets/images/categorie1.js/10.jpg',
+    mainImage: imageUrl('category1/10.jpg'),
     images: [
       'https://images.pexels.com/photos/701877/pexels-photo-701877.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       'https://images.pexels.com/photos/1362558/pexels-photo-1362558.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
@@ -253,7 +256,7 @@ export const products = [
     featured: false,
     colors: ['#513A2A', '#0A0A0A'],
     sizes: ['32', '34', '36', '38', '40', '42'],
-    mainImage: '/assets/images/categorie2.js/1.jpg',
+    mainImage: imageUrl('category2/1.jpg'),
     images: [
       'https://images.pexels.com/photos/10855627/pexels-photo-1085527.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       'https://images.pexels.com/photos/33735736/pexels-photo-3373736.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
@@ -277,7 +280,7 @@ export const products = [
     featured: false,
     colors: ['#242F40', '#4F6973', '#7E5A35'],
     sizes: ['S', 'M', 'L', 'XL'],
-    mainImage: '/assets/images/categorie2.js/2.jpg',
+    mainImage: imageUrl('category2/2.jpg'),
     images: [
       'https://images.pexels.com/photos/7764688/pexels-photo-7764688.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       'https://images.pexels.com/photos/6311199/pexels-photo-6311199.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
@@ -302,7 +305,7 @@ export const products = [
     featured: false,
     colors: ['#FFFFFF', '#000000', '#6B7280'],
     sizes: ['S', 'M', 'L', 'XL'],
-    mainImage: '/assets/images/categorie2.js/3.jpg',
+    mainImage: imageUrl('category2/3.jpg'),
     images: [
       'https://images.pexels.com/photos/1192601/pexels-photo-1192601.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       'https://images.pexels.com/photos/6626903/pexels-photo-6626903.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
@@ -325,7 +328,7 @@ export const products = [
     featured: false,
     colors: ['#000000', '#FFFFFF', '#1F2937'],
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    mainImage: '/assets/images/categorie2.js/4.jpg',
+    mainImage: imageUrl('category2/4.jpg'),
     images: [
       'https://images.pexels.com/photos/5384425/pexels-photo-5384425.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       'https://images.pexels.com/photos/5384422/pexels-photo-5384422.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
@@ -349,7 +352,7 @@ export const products = [
     featured: false,
     colors: ['#000000', '#1F2937', '#374151'],
     sizes: ['S', 'M', 'L', 'XL'],
-    mainImage: '/assets/images/categorie2.js/5.jpg',
+    mainImage: imageUrl('category2/5.jpg'),
     images: [
       'https://images.pexels.com/photos/1336873/pexels-photo-1336873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       'https://images.pexels.com/photos/2887766/pexels-photo-2887766.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
@@ -372,7 +375,7 @@ export const products = [
     featured: true,
     colors: ['#000000', '#2D1B14'],
     sizes: ['S', 'M', 'L', 'XL'],
-    mainImage: '/assets/images/categorie2.js/6.jpg',
+    mainImage: imageUrl('category2/6.jpg'),
     images: [
       'https://images.pexels.com/photos/50862935/pexels-photo-5082935.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       'https://images.pexels.com/photos/10407945/pexels-photo-1040945.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
@@ -396,7 +399,7 @@ export const products = [
     featured: false,
     colors: ['#1E3A8A', '#374151', '#000000'],
     sizes: ['30', '32', '34', '36', '38', '40'],
-    mainImage: '/assets/images/categorie2.js/7.jpg',
+    mainImage: imageUrl('category2/7.jpg'),
     images: [
       'https://images.pexels.com/photos/1598507/pexels-photo-1598507.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       'https://images.pexels.com/photos/4210863/pexels-photo-4210863.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
@@ -419,7 +422,7 @@ export const products = [
     featured: false,
     colors: ['#3E372F', '#1F2937', '#6B7280'],
     sizes: ['30', '32', '34', '36', '38'],
-    mainImage: '/assets/images/categorie2.js/8.jpg',
+    mainImage: imageUrl('category2/8.jpg'),
     images: [
       'https://images.pexels.com/photos/4210863/pexels-photo-4210863.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
     ],
@@ -442,7 +445,7 @@ export const products = [
     featured: false,
     colors: ['#FFFFFF', '#000000', '#1F2937'],
     sizes: ['7', '8', '9', '10', '11', '12'],
-    mainImage: '/assets/images/categorie2.js/9.jpg',
+    mainImage: imageUrl('category2/9.jpg'),
     images: [
       'https://images.pexels.com/photos/267242/pexels-photo-267242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       'https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
@@ -465,7 +468,7 @@ export const products = [
     featured: false,
     colors: ['#000000', '#5B3F36'],
     sizes: ['7', '8', '9', '10', '11', '12'],
-    mainImage: '/assets/images/categorie2.js/10.jpg',
+    mainImage: imageUrl('category2/10.jpg'),
     images: [
       'https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       'https://images.pexels.com/photos/267242/pexels-photo-267242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
@@ -489,7 +492,7 @@ export const products = [
     featured: false,
     colors: ['#000000', '#5B3F36'],
     sizes: ['7', '8', '9', '10', '11', '12'],
-    mainImage: '/assets/images/categorie5.js/1.jpg',
+    mainImage: imageUrl('category5/1.jpg'),
     images: [
       'https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       'https://images.pexels.com/photos/267242/pexels-photo-267242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
@@ -512,7 +515,7 @@ export const products = [
     featured: false,
     colors: ['#000000', '#5B3F36'],
     sizes: ['7', '8', '9', '10', '11', '12'],
-    mainImage: '/assets/images/categorie2.js/10.jpg',
+    mainImage: imageUrl('category2/10.jpg'),
     images: [
       'https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       'https://images.pexels.com/photos/267242/pexels-photo-267242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
@@ -534,7 +537,7 @@ export const products = [
     featured: false,
     colors: ['#000000', '#5B3F36'],
     sizes: ['7', '8', '9', '10', '11', '12'],
-    mainImage: '/assets/images/categorie2.js/10.jpg',
+    mainImage: imageUrl('category2/10.jpg'),
     images: [
       'https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       'https://images.pexels.com/photos/267242/pexels-photo-267242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
@@ -556,7 +559,7 @@ export const products = [
     featured: false,
     colors: ['#000000', '#5B3F36'],
     sizes: ['7', '8', '9', '10', '11', '12'],
-    mainImage: '/assets/images/categorie2.js/10.jpg',
+    mainImage: imageUrl('category2/10.jpg'),
     images: [
       'https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       'https://images.pexels.com/photos/267242/pexels-photo-267242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
